@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   keywords: [
     "openclaw",
     "openclaw 安装",
+    "openclaw 免费安装",
+    "openclaw 免费安装教程",
     "openclaw 教程",
     "openclaw 部署",
     "openclaw 报错",

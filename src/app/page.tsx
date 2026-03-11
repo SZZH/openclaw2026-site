@@ -45,7 +45,7 @@ export default function Home() {
           <p className="eyebrow">OpenClaw 中文实战知识库</p>
           <h1>先跑通，再稳定，再降本</h1>
           <p className="lead">
-            每篇教程都给你明确步骤、风险点和验收项。照着做，能直接落地。
+            提供 OpenClaw 免费安装教程与实操步骤：每篇都含命令、风险点和验收项，照着做就能落地。
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/playbooks">
