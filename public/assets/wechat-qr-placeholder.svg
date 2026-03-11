@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none">
+  <rect width="300" height="300" rx="20" fill="#E6FFFA"/>
+  <rect x="32" y="32" width="236" height="236" rx="16" fill="white" stroke="#99F6E4" stroke-width="4"/>
+  <rect x="56" y="56" width="52" height="52" fill="#0F766E"/>
+  <rect x="192" y="56" width="52" height="52" fill="#0F766E"/>
+  <rect x="56" y="192" width="52" height="52" fill="#0F766E"/>
+  <rect x="132" y="132" width="36" height="36" fill="#134E4A"/>
+  <rect x="176" y="132" width="16" height="16" fill="#134E4A"/>
+  <rect x="132" y="176" width="16" height="16" fill="#134E4A"/>
+  <rect x="176" y="176" width="28" height="28" fill="#134E4A"/>
+  <text x="150" y="286" text-anchor="middle" font-size="14" fill="#0F766E" font-family="Arial, sans-serif">OpenClaw WeChat</text>
+</svg>
