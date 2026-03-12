@@ -60,6 +60,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+  gap: 24px;
 }
 
 .brand-mark {
@@ -88,7 +89,13 @@ a {
 
 .topnav {
   display: flex;
-  gap: 32px;
+  gap: 24px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  min-width: 0;
   color: var(--text-light);
   font-size: 15px;
   font-weight: 500;
@@ -96,6 +103,7 @@ a {
 
 .topnav a {
   position: relative;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
@@ -705,17 +713,24 @@ a {
   }
 
   .topnav {
-    gap: 16px;
+    width: 100%;
+    gap: 14px;
+    justify-content: flex-start;
     font-size: 13px;
   }
 
   .topbar-inner {
-    min-height: 60px;
-    padding: 0 16px;
+    min-height: auto;
+    padding: 12px 16px;
+    gap: 12px;
   }
 
   .logo-img {
     height: 40px;
+  }
+
+  .logo-link {
+    height: auto;
   }
 
   .cta-block {
@@ -752,7 +767,7 @@ a {
   }
 
   .topnav {
-    gap: 12px;
+    gap: 10px;
     font-size: 12px;
   }
 }
@@ -809,6 +824,12 @@ a {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .topic-page .topic-hero {
+    grid-template-columns: 1fr;
+  }
 }
 
 .topic-hero-side {
