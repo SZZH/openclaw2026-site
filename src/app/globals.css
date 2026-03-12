@@ -53,7 +53,7 @@ a {
 }
 
 .topbar-inner {
-  width: min(1200px, 94vw);
+  width: min(1400px, 96vw);
   margin: 0 auto;
   min-height: 120px; /* 大幅增加导航栏高度以容纳巨大 Logo */
   display: flex;
@@ -121,7 +121,7 @@ a {
 /* ============ 主容器 ============ */
 .site-main,
 .page-wrap {
-  width: min(1200px, 94vw);
+  width: min(1400px, 96vw);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -995,21 +995,21 @@ a {
 }
 
 .site-footer {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  color: #e5e7eb;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  color: #374151;
   margin-top: 80px;
   padding-top: 60px;
   padding-bottom: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--primary); /* 红色品牌边框 */
 }
 
 .footer-content {
-  width: min(1200px, 94vw);
+  width: min(1400px, 96vw);
   margin: 0 auto;
   padding: 0 24px 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px;
 }
 
 .footer-section {
@@ -1029,12 +1029,12 @@ a {
   height: 48px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .footer-tagline {
   margin: 0;
-  color: #d1d5db;
+  color: #6b7280;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -1044,28 +1044,29 @@ a {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .social-link {
-  color: #60a5fa;
+  color: var(--primary);
   transition: color 0.3s ease;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .social-link:hover {
-  color: #93c5fd;
+  color: var(--primary-strong);
 }
 
 .social-divider {
-  color: #4b5563;
+  color: #d1d5db;
 }
 
 .footer-title {
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: #1f2937;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1084,28 +1085,28 @@ a {
 
 .footer-links a,
 .footer-text {
-  color: #d1d5db;
+  color: #4b5563;
   transition: color 0.3s ease;
   display: inline-block;
 }
 
 .footer-links a:hover {
-  color: #60a5fa;
+  color: var(--primary);
 }
 
 .footer-text {
-  color: #9ca3af;
+  color: #6b7280;
   font-size: 13px;
 }
 
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f0f1f3;
+  border-top: 1px solid #e5e7eb;
   padding: 32px 24px;
 }
 
 .footer-bottom-inner {
-  width: min(1200px, 94vw);
+  width: min(1400px, 96vw);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -1117,22 +1118,23 @@ a {
 .copyright {
   margin: 0;
   font-size: 13px;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .copyright a {
-  color: #60a5fa;
+  color: var(--primary);
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .copyright a:hover {
-  color: #93c5fd;
+  color: var(--primary-strong);
 }
 
 .footer-credit {
   margin: 0;
   font-size: 13px;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 /* Footer 响应式设计 */
