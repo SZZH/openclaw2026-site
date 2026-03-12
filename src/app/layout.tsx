@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -62,7 +63,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body>
-        {children}
+        <div className="page-container">
+          {children}
+        </div>
+        <Footer />
         <Analytics />
       </body>
     </html>
