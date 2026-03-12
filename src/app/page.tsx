@@ -26,8 +26,8 @@ export default function Home() {
     <main className="site-main">
       <header className="topbar">
         <div className="topbar-inner">
-          <Link href="/" className="brand-mark">
-            OpenClaw 中文站
+          <Link href="/" className="brand-mark logo-link">
+            <img src="/logo.png" alt="OpenClaw Logo" className="logo-img" />
           </Link>
           <nav className="topnav">
             <Link href="/playbooks">实操手册</Link>

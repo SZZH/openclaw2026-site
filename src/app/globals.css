@@ -4,8 +4,8 @@
   --surface-soft: #eef4f6;
   --text: #0f172a;
   --muted: #475569;
-  --primary: #0f766e;
-  --primary-strong: #115e59;
+  --primary: #DC2626; /* 鲜红色 */
+  --primary-strong: #B91C1C; /* 深红色 */
   --border: #d6dee8;
   --shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
 }
@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  background: radial-gradient(circle at 8% 0%, #d9f2ee 0%, #f4f6f8 36%, #f8fafc 100%);
+  background: radial-gradient(circle at 8% 0%, #FEE2E2 0%, #FEE2E2 36%, #FEE7E7 100%); /* 浅红色系渐变 */
   color: var(--text);
   font-family: "Plus Jakarta Sans", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   line-height: 1.62;
@@ -43,7 +43,7 @@ a {
   top: 0;
   z-index: 30;
   backdrop-filter: blur(10px);
-  background: rgba(244, 246, 248, 0.86);
+  background: rgba(254, 226, 226, 0.86); /* 浅红色系背景 */
   border-bottom: 1px solid rgba(214, 222, 232, 0.9);
 }
 
@@ -59,6 +59,23 @@ a {
 .brand-mark {
   font-weight: 800;
   letter-spacing: 0.01em;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.85;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .topnav {
@@ -209,19 +226,19 @@ a {
 }
 
 .route-install {
-  background: linear-gradient(135deg, #effcf8 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 100%); /* 浅红色系渐变 */
 }
 
 .route-deploy {
-  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #FEE2E2 0%, #FFFFFF 100%); /* 浅红色系渐变 */
 }
 
 .route-fix {
-  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #FEE2E2 0%, #FFFFFF 100%); /* 浅红色系渐变 */
 }
 
 .alt-bg {
-  background: linear-gradient(180deg, #f0f8f7 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #FEF2F2 0%, #FFFFFF 100%); /* 浅红色系渐变 */
 }
 
 .section-head {
@@ -267,7 +284,7 @@ a {
 .card-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
-  border-color: #b7c5d8;
+  border-color: #FCA5A5; /* 浅红色边框 */
 }
 
 .topic-card h3,
@@ -300,13 +317,13 @@ a {
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
-  color: #134e4a;
-  background: #ccfbf1;
+  color: #B91C1C; /* 标签文字颜色 */
+  background: #FEE2E2; /* 标签背景颜色 */
   font-weight: 700;
 }
 
 .text-link {
-  color: #0f766e;
+  color: #DC2626; /* 链接文字颜色 */
   font-weight: 700;
 }
 
@@ -318,7 +335,7 @@ a {
 }
 
 .cta-block {
-  background: linear-gradient(135deg, #0f766e 0%, #0b534f 100%);
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%); /* CTA 背景渐变 */
   color: #e6fffb;
   border-color: transparent;
 }
@@ -379,7 +396,7 @@ a {
 
 .cta-inner {
   margin-top: 20px;
-  background: #f0fdfa;
+  background: #FEF2F2; /* CTA 内部背景 */
 }
 
 .summary-grid {

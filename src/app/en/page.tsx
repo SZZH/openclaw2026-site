@@ -20,8 +20,8 @@ export default function EnHomePage() {
     <main className="site-main">
       <header className="topbar">
         <div className="topbar-inner">
-          <Link href="/en" className="brand-mark">
-            OpenClaw English Hub
+          <Link href="/en" className="brand-mark logo-link">
+            <img src="/logo.png" alt="OpenClaw Logo" className="logo-img" />
           </Link>
           <nav className="topnav">
             <Link href="/playbooks">Playbook (ZH)</Link>

@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     "openclaw 安全",
     "openclaw 成本控制",
   ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -49,6 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <link rel="icon" href="/favicon.png" />
+      </head>
       <body>
         {children}
         <Analytics />
