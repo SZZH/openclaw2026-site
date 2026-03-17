@@ -1,38 +1,41 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
-  title: "联系顾问 | OpenClaw 中文站",
-  description: "提交 OpenClaw 安装、部署、报错、安全与成本问题，获取可执行方案。",
+  title: "OpenClaw 有偿咨询 | 19.9 元微信扫码咨询",
+  description: "支持微信与支付宝支付，付款成功后展示 OpenClaw 咨询微信二维码。",
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+type Props = {
+  searchParams: Promise<{ canceled?: string }>;
+};
+
+export default async function ContactPage({ searchParams }: Props) {
+  const { canceled } = await searchParams;
+
   return (
     <main className="page-wrap">
       <article className="card post-card">
         <Link href="/" className="text-link back-link">
           返回首页
         </Link>
-        <h1>联系顾问</h1>
-        <p className="lead">提交问题后会尽快联系你，优先处理可复现和可上线的问题。</p>
+        <h1>OpenClaw 有偿咨询</h1>
+        <p className="lead">咨询定价 19.9 元，支持微信与支付宝。支付成功后显示微信二维码。</p>
+        {canceled ? <p className="form-tip">你已取消支付，可重新发起。</p> : null}
 
-        <section className="contact-grid">
-          <div className="contact-channel card">
-            <h2>微信咨询</h2>
-            <p>
-              微信号：<strong>openclaw-helper</strong>
-            </p>
-            <Image src="/assets/wechat-qr-placeholder.svg" alt="微信二维码" width={220} height={220} />
-            <p className="form-tip">扫码后备注你的问题类型，例如：安装 / 部署 / 排障。</p>
-          </div>
-
-          <div className="contact-channel card">
-            <h2>提交问题表单</h2>
-            <ContactForm />
-          </div>
+        <section className="contact-channel card">
+          <h2>支付说明</h2>
+          <ul className="bullet-list">
+            <li>单次咨询：19.9 元人民币</li>
+            <li>支付方式：微信支付、支付宝</li>
+            <li>支付成功后自动跳转并展示咨询二维码</li>
+          </ul>
+          <form action="/api/checkout/create" method="post" className="payment-form">
+            <button className="btn btn-primary" type="submit">
+              立即支付 19.9 元
+            </button>
+          </form>
         </section>
       </article>
     </main>

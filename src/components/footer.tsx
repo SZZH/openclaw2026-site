@@ -14,13 +14,6 @@ export default function Footer() {
           <p className="footer-tagline">
             OpenClaw 中文实战知识库，提供安装、部署、报错排查、成本控制等完整攻略。
           </p>
-          <div className="footer-social">
-            <a href="https://github.com/SZZH/openclaw2026-site" target="_blank" rel="noopener noreferrer" className="social-link">
-              GitHub
-            </a>
-            <span className="social-divider">•</span>
-            <span className="social-link">WeChat: openclaw-helper</span>
-          </div>
         </div>
 
         {/* 快速导航 */}
@@ -64,20 +57,11 @@ export default function Footer() {
         {/* 联系与支持 */}
         <div className="footer-section">
           <h4 className="footer-title">联系我们</h4>
-          <ul className="footer-links">
-            <li>
-              <Link href="/contact">咨询反馈</Link>
-            </li>
-            <li>
-              <a href="mailto:support@openclaw.cc">发送邮件</a>
-            </li>
-            <li>
-              <span className="footer-text">微信：openclaw-helper</span>
-            </li>
-            <li>
-              <span className="footer-text">工作时间：9:00-18:00</span>
-            </li>
-          </ul>
+          <div className="footer-wechat-only">
+            <Link href="/contact" className="btn btn-primary footer-pay-btn">
+              微信有偿咨询（19.9 元）
+            </Link>
+          </div>
         </div>
       </div>
 

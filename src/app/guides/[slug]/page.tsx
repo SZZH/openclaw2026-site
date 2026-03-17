@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       locale: "zh_CN",
-      url: `https://openclaw.cc/guides/${post.slug}`,
+      url: `https://openclaw2026.cc/guides/${post.slug}`,
       siteName: "OpenClaw 中文站",
       title: `${post.title} | OpenClaw 中文站`,
       description: post.description,
@@ -181,7 +181,7 @@ export default async function GuidePostPage({ params }: Props) {
     inLanguage: "zh-CN",
     keywords: post.keywords.join(", "),
     about: post.intent,
-    url: `https://openclaw.cc/guides/${post.slug}`,
+    url: `https://openclaw2026.cc/guides/${post.slug}`,
     author: {
       "@type": "Organization",
       name: "OpenClaw 中文站",
@@ -199,19 +199,19 @@ export default async function GuidePostPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "首页",
-        item: "https://openclaw.cc/",
+        item: "https://openclaw2026.cc/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "教程",
-        item: "https://openclaw.cc/#guides",
+        item: "https://openclaw2026.cc/#guides",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://openclaw.cc/guides/${post.slug}`,
+        item: `https://openclaw2026.cc/guides/${post.slug}`,
       },
     ],
   };
@@ -230,7 +230,6 @@ export default async function GuidePostPage({ params }: Props) {
         <Link href="/" className="text-link back-link">
           返回首页
         </Link>
-        <span className="tag">{post.category}</span>
         <h1>{post.title}</h1>
         <p className="lead">{post.description}</p>
         <div className="meta">

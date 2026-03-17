@@ -15,14 +15,43 @@ export const topicCategories: TopicCategory[] = [
   {
     slug: "installation",
     category: "安装",
-    title: "OpenClaw 安装专题",
-    description: "告诉你安装前检查什么、安装后怎么验收。",
-    lead: "适合第一次接触 OpenClaw，目标是快速跑通首条链路。",
-    keywords: ["openclaw 安装", "openclaw 教程", "openclaw 初始化"],
-    keywordVariants: ["openclaw 安装指南", "openclaw 安装教程 2026", "openclaw 新手安装步骤"],
+    title: "OpenClaw 安装教程专题（免费安装 + Docker）",
+    description: "覆盖 OpenClaw 免费安装、Docker 安装和首次验收命令，按步骤执行即可跑通。",
+    lead: "适合第一次接触 OpenClaw，目标是 30 分钟内完成安装并通过 doctor/status 验收。",
+    keywords: ["openclaw 免费安装", "openclaw 安装教程", "openclaw docker 安装"],
+    keywordVariants: ["openclaw 安装命令", "openclaw 免费安装教程 2026", "openclaw 新手安装步骤"],
     faqs: [
-      { question: "安装 OpenClaw 前必须检查什么？", answer: "先确认 Node 版本、系统权限与端口占用，再开始安装。" },
-      { question: "首次启动失败最常见原因是什么？", answer: "通常是端口冲突、依赖版本不一致或环境变量缺失。" },
+      {
+        question: "OpenClaw 免费安装的最小命令是什么？",
+        answer:
+          "先执行 `npm i -g @openclaw/cli`，再跑 `openclaw doctor` 与 `openclaw status`。这三步能确认 CLI、环境和服务状态是否正常。",
+      },
+      {
+        question: "首次安装失败最常见原因是什么？",
+        answer:
+          "优先检查 Node 版本、端口占用和权限问题；若仍失败，先看 `openclaw doctor` 的第一条关键报错再处理。",
+      },
+    ],
+  },
+  {
+    slug: "skills",
+    category: "技能",
+    title: "OpenClaw Skills 安装专题（怎么装 / 装哪些）",
+    description: "覆盖 ClawHub 安装、本地 skills 目录与优先级冲突处理，避免装完不能用。",
+    lead: "适合准备扩展能力的团队，目标是让 skill 可控安装、可回滚、可审计。",
+    keywords: ["openclaw skill 安装", "openclaw clawhub", "openclaw skills 目录"],
+    keywordVariants: ["openclaw 怎么装 skill", "openclaw 装哪些 skill", "openclaw skills 优先级"],
+    faqs: [
+      {
+        question: "OpenClaw skill 怎么安装最快？",
+        answer:
+          "先用 `openclaw skills list` 确认可用项，再按 ClawHub 或本地目录安装。安装后用 `openclaw skills list --verbose` 验证版本和路径。",
+      },
+      {
+        question: "同名 skill 冲突时该怎么处理？",
+        answer:
+          "按优先级检查：`./skills` > `~/.openclaw/skills` > 内置技能。保留一份目标版本，删除重复项后重启再测。",
+      },
     ],
   },
   {
@@ -41,14 +70,21 @@ export const topicCategories: TopicCategory[] = [
   {
     slug: "channels",
     category: "渠道",
-    title: "OpenClaw 渠道接入专题",
-    description: "告诉你渠道接入顺序和消息不回的排查路径。",
-    lead: "适合接入飞书、钉钉、企微后回路不稳定的场景。",
-    keywords: ["openclaw 飞书", "openclaw 钉钉", "openclaw 企业微信"],
-    keywordVariants: ["openclaw 渠道接入", "openclaw 飞书机器人", "openclaw 钉钉机器人接入"],
+    title: "OpenClaw 渠道接入专题（飞书 / 钉钉 / Telegram）",
+    description: "提供“消息不回复”四步排查树：鉴权 -> 触发规则 -> 会话权限 -> 日志定位。",
+    lead: "适合接入飞书、钉钉、Telegram 后不稳定或已读不回的场景。",
+    keywords: ["openclaw 飞书接入", "openclaw 钉钉接入", "openclaw 渠道不回复"],
+    keywordVariants: ["openclaw telegram 接入", "openclaw 飞书机器人", "openclaw 钉钉机器人接入"],
     faqs: [
-      { question: "接入成功但不回复怎么排查？", answer: "先检查鉴权和触发规则，再检查会话隔离与权限范围。" },
-      { question: "群聊为什么建议 requireMention？", answer: "可以减少误触发，控制无关消息带来的成本消耗。" },
+      {
+        question: "接入成功但不回复怎么排查？",
+        answer:
+          "按顺序排查：1) 鉴权签名和回调地址；2) 触发规则（是否 @ 或命中关键词）；3) 会话权限（DM 配对/allowFrom）；4) 查看 `openclaw logs --tail 200` 定位失败点。",
+      },
+      {
+        question: "群聊为什么建议 requireMention？",
+        answer: "可以减少误触发和无效消耗，先稳定核心链路，再逐步放开触发策略。",
+      },
     ],
   },
   {
@@ -67,27 +103,39 @@ export const topicCategories: TopicCategory[] = [
   {
     slug: "cost",
     category: "成本",
-    title: "OpenClaw 成本控制专题",
-    description: "告诉你预算怎么设、超限怎么告警、成本怎么降。",
-    lead: "适合长期运行 Agent，目标是把账单控制在预算内。",
-    keywords: ["openclaw 成本", "openclaw token", "openclaw 预算"],
-    keywordVariants: ["openclaw 成本控制", "openclaw token 预算", "openclaw API 账单优化"],
+    title: "OpenClaw 成本控制专题（预算 + 降级 + 告警）",
+    description: "讲清楚日/月预算、超限告警和主备模型降级策略，避免账单失控。",
+    lead: "适合长期运行 Agent，目标是稳定效果前提下把 token 成本锁在预算区间。",
+    keywords: ["openclaw 成本控制", "openclaw token 预算", "openclaw 账单优化"],
+    keywordVariants: ["openclaw API 账单优化", "openclaw 模型降级策略", "openclaw 成本告警"],
     faqs: [
-      { question: "预算阈值怎么设置更稳妥？", answer: "建议同时设置日预算和月预算，并配置超阈值告警。" },
-      { question: "为什么要准备降级模型？", answer: "在成本峰值或主模型异常时，降级模型能保证服务连续性。" },
+      {
+        question: "预算阈值怎么设置更稳妥？",
+        answer: "建议同时设置日预算和月预算，并在 70%/90% 两个阈值触发告警，预留处理窗口。",
+      },
+      {
+        question: "为什么要准备降级模型？",
+        answer: "在成本峰值或主模型不可用时，降级模型可保住核心流程，避免服务直接中断。",
+      },
     ],
   },
   {
     slug: "troubleshooting",
     category: "报错",
-    title: "OpenClaw 报错排查专题",
-    description: "告诉你报错先看哪里、按什么顺序排查。",
-    lead: "适合线上故障处理，目标是先恢复再定位。",
-    keywords: ["openclaw 报错", "openclaw 启动失败", "openclaw 排障"],
-    keywordVariants: ["openclaw 常见报错", "openclaw 无法启动", "openclaw 故障排查"],
+    title: "OpenClaw 报错排查专题（先恢复，再定位）",
+    description: "标准化故障处理路径：先恢复服务，再定位根因，最后沉淀复盘与防复发动作。",
+    lead: "适合线上故障处理，目标是缩短恢复时间并减少重复事故。",
+    keywords: ["openclaw 报错排查", "openclaw 启动失败", "openclaw 故障修复"],
+    keywordVariants: ["openclaw 常见报错", "openclaw 无法启动", "openclaw 日志定位"],
     faqs: [
-      { question: "排错时第一步看什么？", answer: "优先看第一条关键错误日志，而不是最后一行报错。" },
-      { question: "为什么要固定排错顺序？", answer: "固定顺序能减少无效尝试，显著缩短恢复时间。" },
+      {
+        question: "排错时第一步看什么？",
+        answer: "先执行端口与健康检查命令，确认能否快速恢复；再看第一条关键错误日志定位根因。",
+      },
+      {
+        question: "为什么要固定排错顺序？",
+        answer: "固定顺序可减少混改带来的干扰，通常能更快恢复并留下可复现记录。",
+      },
     ],
   },
   {

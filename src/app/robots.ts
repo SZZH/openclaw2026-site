@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://openclaw.cc/sitemap.xml",
-    host: "https://openclaw.cc",
+    sitemap: "https://openclaw2026.cc/sitemap.xml",
+    host: "https://openclaw2026.cc",
   };
 }

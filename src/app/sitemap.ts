@@ -4,7 +4,7 @@ import { enTopicCategories } from "@/data/categories-en";
 import { enPosts } from "@/data/posts-en";
 import { posts } from "@/data/posts";
 
-const SITE_URL = "https://openclaw.cc";
+const SITE_URL = "https://openclaw2026.cc";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseRoutes: MetadataRoute.Sitemap = [

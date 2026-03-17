@@ -8,6 +8,7 @@ export type GuideCategory =
   | "成本"
   | "模型"
   | "渠道"
+  | "技能"
   | "记忆"
   | "会话"
   | "运维";
@@ -33,7 +34,7 @@ export const posts: GuidePost[] = [
     category: "安装",
     updatedAt: "2026-03-11",
     readingMinutes: 8,
-    keywords: ["openclaw", "openclaw安装", "openclaw教程"],
+    keywords: ["openclaw 免费安装", "openclaw 安装教程", "openclaw docker 安装"],
     content: [
       "系统要求先过线：Node.js >= 22，macOS 需 Command Line Tools，Windows 建议 WSL2。",
       "推荐安装路径：`npm install -g openclaw@latest` 后执行 `openclaw onboard --install-daemon`。",
@@ -120,7 +121,7 @@ export const posts: GuidePost[] = [
     title: "OpenClaw Skills 安全清单：安装前先做这 6 步",
     description: "橙皮书里最容易被忽略的一章：技能安全与供应链风险。",
     intent: "openclaw skills 安全",
-    category: "安全",
+    category: "技能",
     updatedAt: "2026-03-11",
     readingMinutes: 8,
     keywords: ["openclaw skills", "openclaw安全", "openclaw供应链"],
@@ -131,6 +132,24 @@ export const posts: GuidePost[] = [
       "技能版本必须锁定并记录变更，异常时能快速回退到上一版。",
       "对 Shell、文件写入、浏览器自动化类技能开启审计日志。",
       "每次新增技能后跑一次最小回归，不要直接放生产流量。",
+    ],
+  },
+  {
+    slug: "openclaw-skills-install-clawhub-local",
+    title: "OpenClaw Skill 安装教程：ClawHub 与本地 skills 目录",
+    description: "讲清楚 skill 怎么装、装到哪里、冲突时按什么优先级生效。",
+    intent: "openclaw skill 安装",
+    category: "技能",
+    updatedAt: "2026-03-12",
+    readingMinutes: 8,
+    keywords: ["openclaw skill 安装", "openclaw clawhub", "openclaw skills 目录"],
+    content: [
+      "先列可用技能：`openclaw skills list`，确认你要装的 skill 名称与来源。",
+      "从市场安装可优先用 ClawHub，安装后再跑 `openclaw skills list --verbose` 查看版本与路径。",
+      "本地技能目录建议固定为 `~/.openclaw/skills`，团队共享技能放到仓库 `./skills` 目录。",
+      "加载优先级遵循：工作区 `./skills` > 用户目录 `~/.openclaw/skills` > 内置技能。",
+      "同名技能冲突时，先清理重复版本再重启服务，避免出现“调用到旧版本”的假象。",
+      "新增 skill 后做最小回归：调用一次只读任务、一次文件读任务、一次失败回滚验证。",
     ],
   },
   {

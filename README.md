@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Baidu SEO and Analytics
+
+This site supports Baidu Search Resource Platform verification and Baidu Tongji tracking through environment variables.
+
+1. Add environment variables in Vercel project settings:
+
+```bash
+NEXT_PUBLIC_BAIDU_SITE_VERIFICATION=your_baidu_verification_code
+NEXT_PUBLIC_BAIDU_TONGJI_ID=your_baidu_tongji_id
+```
+
+2. Redeploy after saving variables.
+3. In Baidu Search Resource Platform, verify the site with the meta tag method.
+4. In Baidu Tongji, confirm data is arriving in real time.

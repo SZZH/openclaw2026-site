@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     locale: "zh_CN",
-    url: "https://openclaw.cc/playbooks",
+    url: "https://openclaw2026.cc/playbooks",
     siteName: "OpenClaw 中文站",
     title: "OpenClaw 实操手册 | 命令、部署、云厂商价格对比",
     description:
@@ -105,7 +105,7 @@ export default function PlaybooksPage() {
     inLanguage: "zh-CN",
     dateModified: "2026-03-11",
     keywords: "OpenClaw, 安装, 部署, 飞书, 云服务器, 成本",
-    url: "https://openclaw.cc/playbooks",
+    url: "https://openclaw2026.cc/playbooks",
     author: { "@type": "Organization", name: "OpenClaw 中文站" },
     publisher: { "@type": "Organization", name: "OpenClaw 中文站" },
   };
@@ -127,12 +127,12 @@ export default function PlaybooksPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "首页", item: "https://openclaw.cc/" },
+      { "@type": "ListItem", position: 1, name: "首页", item: "https://openclaw2026.cc/" },
       {
         "@type": "ListItem",
         position: 2,
         name: "实操手册",
-        item: "https://openclaw.cc/playbooks",
+        item: "https://openclaw2026.cc/playbooks",
       },
     ],
   };
@@ -156,7 +156,6 @@ export default function PlaybooksPage() {
         <Link href="/" className="text-link back-link">
           返回首页
         </Link>
-        <span className="tag">实操手册</span>
         <h1>OpenClaw 实操手册（可直接执行）</h1>
         <p className="lead">
           你可以把这一页当作上线清单：先安装与验收，再做部署与回滚，最后做渠道接入和成本控制。

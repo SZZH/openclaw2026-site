@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: `https://openclaw.cc/en/topics/${topic.slug}`,
+      url: `https://openclaw2026.cc/en/topics/${topic.slug}`,
       title: `${topic.title} | OpenClaw English Hub`,
       description: topic.description,
       siteName: "OpenClaw English Hub",
@@ -53,7 +53,7 @@ export default async function EnTopicPage({ params }: Props) {
     "Execute one checklist at a time",
     "Confirm result with acceptance checks",
   ];
-  const topicUrl = `https://openclaw.cc/en/topics/${topic.slug}`;
+  const topicUrl = `https://openclaw2026.cc/en/topics/${topic.slug}`;
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -67,8 +67,8 @@ export default async function EnTopicPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "English Hub", item: "https://openclaw.cc/en" },
-      { "@type": "ListItem", position: 2, name: "Topics", item: "https://openclaw.cc/en#topics" },
+      { "@type": "ListItem", position: 1, name: "English Hub", item: "https://openclaw2026.cc/en" },
+      { "@type": "ListItem", position: 2, name: "Topics", item: "https://openclaw2026.cc/en#topics" },
       { "@type": "ListItem", position: 3, name: topic.title, item: topicUrl },
     ],
   };
@@ -81,7 +81,6 @@ export default async function EnTopicPage({ params }: Props) {
         <div className="topic-hero">
           <div>
             <Link href="/en" className="text-link back-link">Back to English Hub</Link>
-            <span className="tag">{topic.category}</span>
             <h1>{topic.title}</h1>
             <p className="lead">{topic.description}</p>
           </div>

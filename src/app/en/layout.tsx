@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://openclaw.cc/en",
+    url: "https://openclaw2026.cc/en",
     siteName: "OpenClaw English Hub",
     title: "OpenClaw English Guides & Deployment Hub",
     description:

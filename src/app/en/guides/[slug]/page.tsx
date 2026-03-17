@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: `https://openclaw.cc/en/guides/${post.slug}`,
+      url: `https://openclaw2026.cc/en/guides/${post.slug}`,
       title: `${post.title} | OpenClaw English Hub`,
       description: post.description,
       siteName: "OpenClaw English Hub",
@@ -108,7 +108,7 @@ export default async function EnGuidePage({ params }: Props) {
   };
   const commandList = commandByCategory[post.category] ?? ["openclaw doctor"];
   const officialLinks = officialLinksByCategory[post.category] ?? [];
-  const pageUrl = `https://openclaw.cc/en/guides/${post.slug}`;
+  const pageUrl = `https://openclaw2026.cc/en/guides/${post.slug}`;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -125,8 +125,8 @@ export default async function EnGuidePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "English Hub", item: "https://openclaw.cc/en" },
-      { "@type": "ListItem", position: 2, name: "Guides", item: "https://openclaw.cc/en#topics" },
+      { "@type": "ListItem", position: 1, name: "English Hub", item: "https://openclaw2026.cc/en" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://openclaw2026.cc/en#topics" },
       { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
     ],
   };
@@ -137,7 +137,6 @@ export default async function EnGuidePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <article className="card post-card">
         <Link href="/en" className="text-link back-link">Back to English Hub</Link>
-        <span className="tag">{post.category}</span>
         <h1>{post.title}</h1>
         <p className="lead">{post.description}</p>
         <div className="meta">

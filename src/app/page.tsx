@@ -15,6 +15,12 @@ const serviceSteps = [
   "把可复用流程沉淀到团队运维手册",
 ];
 
+const quickValidationCommands = [
+  "npm i -g @openclaw/cli",
+  "openclaw doctor",
+  "openclaw status",
+];
+
 export default function Home() {
   const totalGuides = posts.length;
   const totalTopics = topicCategories.length;
@@ -42,10 +48,10 @@ export default function Home() {
 
       <section className="hero-v2">
         <div className="hero-copy">
-          <p className="eyebrow">OpenClaw 中文实战知识库</p>
-          <h1>先跑通，再稳定，再降本</h1>
+          <p className="eyebrow">OpenClaw 免费安装与部署实战站</p>
+          <h1>OpenClaw 免费安装教程：先跑通第一条链路</h1>
           <p className="lead">
-            提供 OpenClaw 免费安装教程与实操步骤：每篇都含命令、风险点和验收项，照着做就能落地。
+            从安装命令到上线验收，全部按步骤写清楚。你可以直接复制命令执行，5 分钟完成首次自检。
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/playbooks">
@@ -79,6 +85,16 @@ export default function Home() {
           </ul>
           <p>从专题页进入，会比直接翻全站更快定位答案。</p>
         </aside>
+      </section>
+
+      <section className="section-wrap">
+        <div className="section-head">
+          <h2>5 分钟快速验证（安装后先做这个）</h2>
+          <p>按顺序执行：安装 CLI → 环境自检 → 服务状态检查。</p>
+        </div>
+        <pre className="cmd-block">
+          <code>{quickValidationCommands.join("\n")}</code>
+        </pre>
       </section>
 
       <section className="section-wrap route-wrap">
