@@ -57,9 +57,7 @@ export default function Footer() {
         {/* 联系与支持 */}
         <div className="footer-section">
           <h4 className="footer-title">联系我们</h4>
-          <div className="footer-wechat-only">
-            <p className="footer-tagline">微信有偿咨询入口维护中，暂未开放。</p>
-          </div>
+          <div className="footer-wechat-only" />
         </div>
       </div>
 
