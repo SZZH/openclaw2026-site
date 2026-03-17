@@ -54,7 +54,13 @@ export default function Home() {
             从安装命令到上线验收，全部按步骤写清楚。你可以直接复制命令执行，5 分钟完成首次自检。
           </p>
           <div className="cta-row">
-            <Link className="btn btn-primary" href="/playbooks">
+            <Link
+              className="btn btn-primary"
+              href="/playbooks"
+              data-track-event="conversion"
+              data-track-action="home_cta"
+              data-track-label="playbooks"
+            >
               先看实操手册
             </Link>
             <a className="btn btn-secondary" href="#topics">
@@ -178,12 +184,24 @@ export default function Home() {
           全站内容按“命令、步骤、失败案例、验收”组织。你可以先照做拿结果，再补细化方案。
         </p>
         <div className="cta-row">
-          <Link className="btn btn-secondary" href="/playbooks">
-            打开实操手册
-          </Link>
-          <Link className="btn btn-secondary" href="/topics/troubleshooting">
-            进入排障专题
-          </Link>
+            <Link
+              className="btn btn-secondary"
+              href="/playbooks"
+              data-track-event="conversion"
+              data-track-action="home_bottom_cta"
+              data-track-label="playbooks"
+            >
+              打开实操手册
+            </Link>
+            <Link
+              className="btn btn-secondary"
+              href="/topics/troubleshooting"
+              data-track-event="conversion"
+              data-track-action="home_bottom_cta"
+              data-track-label="troubleshooting"
+            >
+              进入排障专题
+            </Link>
         </div>
       </section>
     </main>

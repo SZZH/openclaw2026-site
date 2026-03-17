@@ -32,7 +32,13 @@ export default async function ContactPage({ searchParams }: Props) {
             <li>支付成功后自动跳转并展示咨询二维码</li>
           </ul>
           <form action="/api/checkout/create" method="post" className="payment-form">
-            <button className="btn btn-primary" type="submit">
+            <button
+              className="btn btn-primary"
+              type="submit"
+              data-track-event="conversion"
+              data-track-action="contact_pay_click"
+              data-track-label="pay_19_9"
+            >
               立即支付 19.9 元
             </button>
           </form>

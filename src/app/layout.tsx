@@ -80,6 +80,9 @@ export default function RootLayout({
             <Script id="baidu-tongji-loader" strategy="afterInteractive">
               {`var _hmt = _hmt || [];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?${baiduTongjiId}";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();`}
             </Script>
+            <Script id="baidu-event-tracker" strategy="afterInteractive">
+              {`(function(){document.addEventListener("click",function(e){var target=e.target&&e.target.closest?e.target.closest("[data-track-event]"):null;if(!target){return;}var ev=target.getAttribute("data-track-event");if(!ev){return;}var action=target.getAttribute("data-track-action")||"click";var label=target.getAttribute("data-track-label")||"";var value=target.getAttribute("data-track-value")||"";window._hmt=window._hmt||[];window._hmt.push(["_trackEvent",ev,action,label,value]);});})();`}
+            </Script>
           </>
         ) : null}
         <div className="page-container">

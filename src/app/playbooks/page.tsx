@@ -301,6 +301,29 @@ npm install -g openclaw@<old_version>`}</code>
               </li>
             ))}
           </ul>
+          <p>
+            卡在某一步时，先看
+            <Link
+              href="/topics/troubleshooting"
+              className="text-link"
+              data-track-event="conversion"
+              data-track-action="playbooks_cta"
+              data-track-label="troubleshooting"
+            >
+              报错排障专题
+            </Link>
+            ，仍无法解决可到
+            <Link
+              href="/contact"
+              className="text-link"
+              data-track-event="conversion"
+              data-track-action="playbooks_cta"
+              data-track-label="contact"
+            >
+              咨询页
+            </Link>
+            继续处理。
+          </p>
         </section>
       </article>
     </main>
