@@ -312,17 +312,7 @@ npm install -g openclaw@<old_version>`}</code>
             >
               报错排障专题
             </Link>
-            ，仍无法解决可到
-            <Link
-              href="/contact"
-              className="text-link"
-              data-track-event="conversion"
-              data-track-action="playbooks_cta"
-              data-track-label="contact"
-            >
-              咨询页
-            </Link>
-            继续处理。
+            ，按恢复服务、定位根因、固化处理步骤的顺序执行。
           </p>
         </section>
       </article>

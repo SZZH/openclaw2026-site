@@ -58,9 +58,7 @@ export default function Footer() {
         <div className="footer-section">
           <h4 className="footer-title">联系我们</h4>
           <div className="footer-wechat-only">
-            <Link href="/contact" className="btn btn-primary footer-pay-btn">
-              微信有偿咨询（19.9 元）
-            </Link>
+            <p className="footer-tagline">微信有偿咨询入口维护中，暂未开放。</p>
           </div>
         </div>
       </div>

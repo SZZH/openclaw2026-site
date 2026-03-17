@@ -88,7 +88,6 @@ export default async function EnTopicPage({ params }: Props) {
             <h3>What you get from this topic</h3>
             <p>{topic.lead}</p>
             <p>You get execution steps, risk checks, and acceptance targets.</p>
-            <Link href="/contact" className="btn btn-primary">Contact</Link>
           </div>
         </div>
 

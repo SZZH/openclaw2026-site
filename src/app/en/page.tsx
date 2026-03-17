@@ -26,7 +26,6 @@ export default function EnHomePage() {
           <nav className="topnav">
             <Link href="/playbooks">Playbook (ZH)</Link>
             <a href="#topics">Topics</a>
-            <Link href="/contact">Contact</Link>
             <Link href="/">中文</Link>
           </nav>
         </div>
@@ -43,9 +42,6 @@ export default function EnHomePage() {
             <a className="btn btn-primary" href="#topics">
               Browse Topics
             </a>
-            <Link className="btn btn-secondary" href="/contact">
-              Contact
-            </Link>
           </div>
           <div className="stats-row">
             <div>
@@ -95,10 +91,7 @@ export default function EnHomePage() {
 
       <section className="section-wrap cta-block">
         <h2>Need direct help?</h2>
-        <p className="lead">
-          Send your environment details and logs. You will get an executable path.
-        </p>
-        <p className="wechat">WeChat: openclaw-helper</p>
+        <p className="lead">The paid WeChat consultation entry is temporarily hidden.</p>
       </section>
     </main>
   );

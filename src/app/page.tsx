@@ -40,7 +40,6 @@ export default function Home() {
             <a href="#topics">专题</a>
             <a href="#latest">教程</a>
             <a href="#workflow">流程</a>
-            <Link href="/contact">咨询</Link>
             <Link href="/en">EN</Link>
           </nav>
         </div>
