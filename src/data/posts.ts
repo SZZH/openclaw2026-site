@@ -1,5 +1,12 @@
 export type GuideCategory =
+  | "核心"
   | "安装"
+  | "Web"
+  | "Agent"
+  | "多Agent"
+  | "高级工具"
+  | "自动化"
+  | "移动节点"
   | "部署"
   | "报错"
   | "实战"
@@ -8,6 +15,8 @@ export type GuideCategory =
   | "成本"
   | "模型"
   | "渠道"
+  | "ClawHub"
+  | "配置"
   | "技能"
   | "记忆"
   | "会话"
@@ -26,6 +35,151 @@ export type GuidePost = {
 };
 
 export const posts: GuidePost[] = [
+  {
+    slug: "openclaw-core-concepts-gateway-session-agent",
+    title: "OpenClaw 核心概念：Gateway、Session、Agent、Skill 一次看懂",
+    description: "把官方手册里的核心概念整理成可执行理解框架。",
+    intent: "openclaw 核心概念",
+    category: "核心",
+    updatedAt: "2026-03-25",
+    readingMinutes: 8,
+    keywords: ["openclaw gateway", "openclaw session", "openclaw agent"],
+    content: [
+      "Gateway 是长期运行进程，负责渠道连接、会话路由和消息分发。",
+      "Session 按会话持久化到 JSONL 文件，私聊与群聊按规则隔离。",
+      "Agent 是执行主体，工作区、系统提示和工具决定行为边界。",
+      "Skill 是能力扩展单元，建议先审计再启用。",
+      "多渠道场景要先明确路由策略，再扩展技能和自动化。",
+    ],
+  },
+  {
+    slug: "openclaw-web-dashboard-access-and-remote",
+    title: "OpenClaw Web 控制台：本地访问、Tailscale、SSH 隧道",
+    description: "从 127.0.0.1 到远程访问的安全实践。",
+    intent: "openclaw dashboard",
+    category: "Web",
+    updatedAt: "2026-03-25",
+    readingMinutes: 7,
+    keywords: ["openclaw dashboard", "openclaw 18789", "openclaw tailscale"],
+    content: [
+      "默认入口是 `http://127.0.0.1:18789/`，先保证本地可用再做远程。",
+      "远程访问优先走 Tailscale，不建议直接裸露核心端口。",
+      "SSH 隧道是低成本替代方案，适合临时运维访问。",
+      "控制台用于会话管理、配置调整和节点查看，建议启用访问令牌。",
+    ],
+  },
+  {
+    slug: "openclaw-agent-workspace-and-prompt-files",
+    title: "OpenClaw Agent 系统：工作区文件与人格边界配置",
+    description: "SOUL/AGENTS/USER/MEMORY 文件如何协同。",
+    intent: "openclaw agent 系统",
+    category: "Agent",
+    updatedAt: "2026-03-25",
+    readingMinutes: 8,
+    keywords: ["openclaw agent", "openclaw SOUL.md", "openclaw AGENTS.md"],
+    content: [
+      "SOUL.md 决定表达风格与边界，AGENTS.md 决定执行规则。",
+      "USER.md 与 MEMORY.md 负责长期事实，Session 负责实时上下文。",
+      "高风险外部动作要强制确认，避免误触发生产影响。",
+      "推荐把工具约束写进文件，不依赖临时口头约定。",
+    ],
+  },
+  {
+    slug: "openclaw-multi-agent-routing-strategy",
+    title: "OpenClaw 多 Agent 架构：按渠道和任务隔离实例",
+    description: "把客服、编码、测试流量拆到不同 Agent。",
+    intent: "openclaw 多agent",
+    category: "多Agent",
+    updatedAt: "2026-03-25",
+    readingMinutes: 7,
+    keywords: ["openclaw agents add", "openclaw agents bind", "openclaw bindings"],
+    content: [
+      "用 `openclaw agents add` 创建独立工作区实例。",
+      "通过 `openclaw agents bind` 绑定渠道或目标群组。",
+      "测试与生产分离是最低成本稳定性策略。",
+      "多 Agent 结构要配统一日志和回滚规范。",
+    ],
+  },
+  {
+    slug: "openclaw-advanced-tools-browser-canvas-message",
+    title: "OpenClaw 高级工具集：浏览器自动化、Canvas、消息主动发送",
+    description: "把工具能力从聊天扩展到可执行自动化。",
+    intent: "openclaw 高级工具",
+    category: "高级工具",
+    updatedAt: "2026-03-25",
+    readingMinutes: 8,
+    keywords: ["openclaw browser", "openclaw canvas", "openclaw message send"],
+    content: [
+      "浏览器工具可做页面打开、截图、快照、点击和输入。",
+      "Canvas 适合把结果可视化展示在浏览器画布。",
+      "`openclaw message send` 可跨渠道主动推送通知。",
+      "执行型工具建议配审计日志与最小权限策略。",
+    ],
+  },
+  {
+    slug: "openclaw-cron-hooks-automation-guide",
+    title: "OpenClaw 自动化：Cron 定时任务与 Hooks 事件驱动",
+    description: "让 Agent 在固定时间或触发条件下自动执行。",
+    intent: "openclaw cron",
+    category: "自动化",
+    updatedAt: "2026-03-25",
+    readingMinutes: 7,
+    keywords: ["openclaw cron add", "openclaw hooks", "openclaw 自动化"],
+    content: [
+      "Cron 适合日报、巡检、提醒等固定周期任务。",
+      "Hooks 适合消息触发的自动回复和流程分发。",
+      "任务上线前先压测失败重试与告警路径。",
+      "自动化策略应明确暂停、恢复和回滚流程。",
+    ],
+  },
+  {
+    slug: "openclaw-mobile-nodes-ios-android",
+    title: "OpenClaw 移动节点：iOS/Android 配对与能力清单",
+    description: "把手机变成可调用的执行节点。",
+    intent: "openclaw nodes",
+    category: "移动节点",
+    updatedAt: "2026-03-25",
+    readingMinutes: 7,
+    keywords: ["openclaw nodes", "openclaw nodes approve", "openclaw node app"],
+    content: [
+      "先在手机安装 OpenClaw Node，再在 Gateway 侧批准配对。",
+      "常用能力包含拍照、定位、通知和屏幕快照。",
+      "节点权限建议按设备和角色做最小授权。",
+      "异常时先查 `openclaw nodes status` 与配对日志。",
+    ],
+  },
+  {
+    slug: "openclaw-clawhub-skill-market-guide",
+    title: "ClawHub 技能市场实操：搜索、安装、更新、发布",
+    description: "从消费第三方技能到发布自有技能的完整路径。",
+    intent: "clawhub 技能",
+    category: "ClawHub",
+    updatedAt: "2026-03-25",
+    readingMinutes: 7,
+    keywords: ["clawhub", "openclaw skills check", "npx clawhub install"],
+    content: [
+      "先用 `npx clawhub search` 找技能，再安装到可控目录。",
+      "上线前执行 `openclaw skills check` 审计依赖与权限。",
+      "版本更新用 `npx clawhub update --all`，并做最小回归。",
+      "发布技能前补齐 SKILL.md 和 metadata 依赖声明。",
+    ],
+  },
+  {
+    slug: "openclaw-config-reference-and-env-priority",
+    title: "OpenClaw 配置参考：openclaw.json 与环境变量优先级",
+    description: "把关键配置和覆盖顺序讲清楚，避免线上配置漂移。",
+    intent: "openclaw 配置",
+    category: "配置",
+    updatedAt: "2026-03-25",
+    readingMinutes: 8,
+    keywords: ["openclaw.json", "OPENCLAW_CONFIG_PATH", "openclaw gateway token"],
+    content: [
+      "配置优先级是 `OPENCLAW_CONFIG_PATH` > 默认配置文件路径。",
+      "关键项包括 gateway 端口/认证、agents 默认模型、channels 白名单。",
+      "生产环境建议统一用环境变量注入密钥。",
+      "每次变更后立即跑 `openclaw doctor` 和最小链路验收。",
+    ],
+  },
   {
     slug: "openclaw-installation-2026",
     title: "OpenClaw 安装完整教程（2026）",

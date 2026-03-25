@@ -13,6 +13,25 @@ export type TopicCategory = {
 
 export const topicCategories: TopicCategory[] = [
   {
+    slug: "core-concepts",
+    category: "核心",
+    title: "OpenClaw 核心概念专题（Gateway / Session / Agent / Skill）",
+    description: "先把核心概念打通，再做安装与部署，减少后续理解偏差。",
+    lead: "适合第一次系统学习 OpenClaw，目标是建立统一术语和排障心智模型。",
+    keywords: ["openclaw gateway", "openclaw session", "openclaw agent"],
+    keywordVariants: ["openclaw 核心概念", "openclaw skill 是什么", "openclaw 会话机制"],
+    faqs: [
+      {
+        question: "Gateway 和 Agent 的区别是什么？",
+        answer: "Gateway 负责连接和路由，Agent 负责理解与执行，两者分层解耦更易维护。",
+      },
+      {
+        question: "为什么要先学 Session？",
+        answer: "会话是上下文与审计的核心单元，理解 Session 才能正确做隔离和排障。",
+      },
+    ],
+  },
+  {
     slug: "installation",
     category: "安装",
     title: "OpenClaw 安装教程专题（免费安装 + Docker）",
@@ -68,6 +87,120 @@ export const topicCategories: TopicCategory[] = [
     ],
   },
   {
+    slug: "web-dashboard",
+    category: "Web",
+    title: "OpenClaw Web 控制台专题（本地 + 远程访问）",
+    description: "覆盖 dashboard 访问方式、Tailscale 远程接入和 SSH 隧道安全实践。",
+    lead: "适合要做远程维护但不想暴露公网端口的团队。",
+    keywords: ["openclaw dashboard", "openclaw 18789", "openclaw tailscale"],
+    keywordVariants: ["openclaw web 控制界面", "openclaw 远程访问", "openclaw ssh 隧道"],
+    faqs: [
+      {
+        question: "为什么不建议直接暴露 18789 端口？",
+        answer: "核心控制面暴露到公网风险高，建议优先用 Tailscale 或 SSH 隧道。",
+      },
+      {
+        question: "远程访问最稳妥的默认方案是什么？",
+        answer: "先本地回环验证，再用 Tailscale 组网，最后补充访问令牌与日志审计。",
+      },
+    ],
+  },
+  {
+    slug: "agent-system",
+    category: "Agent",
+    title: "OpenClaw Agent 系统专题（工作区与引导文件）",
+    description: "讲清楚 SOUL/AGENTS/USER/MEMORY 文件如何共同影响 Agent 行为。",
+    lead: "适合要把 Agent 从“能聊”做成“能稳定干活”的团队。",
+    keywords: ["openclaw agent", "openclaw SOUL.md", "openclaw AGENTS.md"],
+    keywordVariants: ["openclaw 工作区", "openclaw 引导文件", "openclaw 人格配置"],
+    faqs: [
+      {
+        question: "SOUL.md 和 AGENTS.md 分别管什么？",
+        answer: "SOUL.md 管风格和边界，AGENTS.md 管执行策略和规则。",
+      },
+      {
+        question: "为什么记忆要写文件而不是靠会话？",
+        answer: "文件可持久、可审计、可迁移，能降低会话丢失导致的信息断层。",
+      },
+    ],
+  },
+  {
+    slug: "multi-agent",
+    category: "多Agent",
+    title: "OpenClaw 多 Agent 架构专题（隔离与路由）",
+    description: "按渠道、任务、环境拆分 Agent，减少相互干扰和事故扩散。",
+    lead: "适合要做正式环境隔离和团队分工协作的场景。",
+    keywords: ["openclaw agents add", "openclaw agents bind", "openclaw 多agent"],
+    keywordVariants: ["openclaw agent 隔离", "openclaw 渠道绑定", "openclaw 多实例"],
+    faqs: [
+      {
+        question: "什么时候必须上多 Agent？",
+        answer: "当渠道行为差异大、测试生产要隔离或任务职责明显不同时。",
+      },
+      {
+        question: "多 Agent 如何降低风险？",
+        answer: "隔离工作区和绑定关系后，问题影响面被限制在单实例内。",
+      },
+    ],
+  },
+  {
+    slug: "advanced-tools",
+    category: "高级工具",
+    title: "OpenClaw 高级工具专题（Browser / Canvas / Message）",
+    description: "覆盖浏览器自动化、画布展示、主动消息发送等执行能力。",
+    lead: "适合把 OpenClaw 从聊天助手升级为自动化执行器。",
+    keywords: ["openclaw browser", "openclaw canvas", "openclaw message send"],
+    keywordVariants: ["openclaw 浏览器控制", "openclaw canvas 用法", "openclaw 主动发消息"],
+    faqs: [
+      {
+        question: "高级工具上线前先做什么？",
+        answer: "先定义权限边界和审计策略，再跑最小回归避免误操作。",
+      },
+      {
+        question: "为什么执行类工具需要额外审计？",
+        answer: "其影响真实外部系统，必须可追溯可回滚。",
+      },
+    ],
+  },
+  {
+    slug: "automation",
+    category: "自动化",
+    title: "OpenClaw 自动化专题（Cron + Hooks）",
+    description: "把定时任务和事件触发流程做成可监控、可暂停、可恢复的自动化体系。",
+    lead: "适合做日报、告警、运营编排等重复性流程。",
+    keywords: ["openclaw cron", "openclaw hooks", "openclaw 自动化"],
+    keywordVariants: ["openclaw 定时任务", "openclaw 事件触发", "openclaw 自动回复"],
+    faqs: [
+      {
+        question: "Cron 和 Hooks 怎么选？",
+        answer: "固定时间用 Cron，事件触发用 Hooks，复杂场景组合使用。",
+      },
+      {
+        question: "自动化任务为什么要有暂停开关？",
+        answer: "异常时可立即止损，避免错误持续放大。",
+      },
+    ],
+  },
+  {
+    slug: "mobile-nodes",
+    category: "移动节点",
+    title: "OpenClaw 移动节点专题（iOS / Android）",
+    description: "讲清楚 Node 配对、审批、权限与常用能力调用流程。",
+    lead: "适合需要手机拍照、定位、通知等现场能力的自动化任务。",
+    keywords: ["openclaw nodes", "openclaw node 配对", "openclaw 手机节点"],
+    keywordVariants: ["openclaw nodes approve", "openclaw iOS node", "openclaw android node"],
+    faqs: [
+      {
+        question: "移动节点最常见故障点是什么？",
+        answer: "配对审批未完成、节点离线或权限未授权。",
+      },
+      {
+        question: "节点权限为什么要最小化？",
+        answer: "移动端能力涉及隐私数据，最小权限可降低泄露和滥用风险。",
+      },
+    ],
+  },
+  {
     slug: "channels",
     category: "渠道",
     title: "OpenClaw 渠道接入专题（飞书 / 钉钉 / Telegram）",
@@ -84,6 +217,44 @@ export const topicCategories: TopicCategory[] = [
       {
         question: "群聊为什么建议 requireMention？",
         answer: "可以减少误触发和无效消耗，先稳定核心链路，再逐步放开触发策略。",
+      },
+    ],
+  },
+  {
+    slug: "clawhub",
+    category: "ClawHub",
+    title: "OpenClaw ClawHub 技能市场专题",
+    description: "从搜索、安装、更新到发布技能，形成完整技能生命周期流程。",
+    lead: "适合要扩展第三方技能并建立团队审核机制的场景。",
+    keywords: ["clawhub", "npx clawhub install", "openclaw skills check"],
+    keywordVariants: ["openclaw clawhub 教程", "openclaw 发布技能", "openclaw 技能市场"],
+    faqs: [
+      {
+        question: "安装市场技能前最关键检查是什么？",
+        answer: "先做依赖与权限审计，再决定是否放入生产环境。",
+      },
+      {
+        question: "为什么要锁定技能版本？",
+        answer: "版本锁定可避免上游更新导致行为漂移，便于回滚。",
+      },
+    ],
+  },
+  {
+    slug: "config-reference",
+    category: "配置",
+    title: "OpenClaw 配置参考专题（openclaw.json + ENV）",
+    description: "整理关键配置项、环境变量和优先级，避免线上配置漂移。",
+    lead: "适合团队协作和多环境运维，目标是配置一致、可审计。",
+    keywords: ["openclaw 配置", "openclaw.json", "OPENCLAW_CONFIG_PATH"],
+    keywordVariants: ["openclaw 环境变量", "openclaw gateway token", "openclaw 配置优先级"],
+    faqs: [
+      {
+        question: "配置优先级怎么理解？",
+        answer: "环境变量显式配置优先，其次是默认配置文件路径。",
+      },
+      {
+        question: "配置变更后为什么要立即验收？",
+        answer: "可第一时间发现兼容和拼写错误，避免隐性故障累积。",
       },
     ],
   },
